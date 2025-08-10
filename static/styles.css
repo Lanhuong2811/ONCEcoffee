@@ -1,0 +1,253 @@
+body.pink-theme {
+    background-color: #fde6ee;
+    color: #b5006b;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.logo {
+    height: auto;
+    max-width: 50px;
+    width: 30%;
+    margin: 10px 0;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #fff;
+}
+
+nav a {
+    color: #b5006b;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+.intro {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.intro h1 {
+    font-size: 3rem;
+}
+
+.btn {
+    background-color: #b5006b;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.illustration img {
+    width: 80%;
+    display: block;
+    margin: 40px auto;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9rem;
+    background-color: #fff;
+}
+body {
+    background-color: #ffe6f0;
+    font-family: 'Helvetica Neue', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    color: #cc0066;
+}
+
+.card {
+    border-radius: 12px;
+    box-shadow: 0 0 10px #ccc;
+}
+body {
+    font-family: 'Helvetica Neue', sans-serif;
+    background-color: #ffe6f0;
+    margin: 0;
+    padding: 0;
+    color: #5c0055;
+}
+
+.header {
+    background-color: #ffb3d9;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 24px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #5c0055;
+    font-weight: bold;
+}
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px;
+    background-color: #fff0f5;
+}
+
+.hero-text h1 {
+    font-size: 3rem;
+    color: #cc0066;
+    margin: 0;
+}
+
+.hero-text p {
+    font-size: 1.2rem;
+    margin: 10px 0 20px;
+}
+
+.btn-primary {
+    background-color: #cc0066;
+    color: white;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.hero-img img {
+    max-width: 400px;
+    height: auto;
+}
+
+.footer {
+    background-color: #ffccde;
+    padding: 20px;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.footer-contact p {
+    margin: 4px 0;
+}
+.about-container {
+    background-color: #ffeef5;
+    padding: 40px;
+    border-radius: 20px;
+    max-width: 800px;
+    margin: auto;
+    color: #b5005a;
+    font-family: 'Helvetica Neue', sans-serif;
+}
+
+.about-container h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    color: #d10065;
+    margin-bottom: 20px;
+}
+
+.about-container .subtitle {
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.about-container p {
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.about-container .image-section {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.about-container img {
+    max-width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(255, 0, 100, 0.2);
+}
+
+.about-container .quote {
+    font-style: italic;
+    text-align: center;
+    margin-top: 40px;
+    font-size: 1.1rem;
+    color: #890042;
+}
+.shop-container {
+    padding: 2rem;
+    text-align: center;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.product-card {
+    background-color: #fff0f7;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    padding: 1rem;
+    transition: transform 0.2s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+.product-card img {
+    width: 100%;
+    border-radius: 12px;
+    height: auto;
+}
+
+.product-card h2 {
+    font-size: 1.2rem;
+    color: #d63384;
+    margin-top: 1rem;
+}
+
+.product-card .description {
+    font-size: 0.95rem;
+    margin: 0.5rem 0;
+    color: #555;
+}
+
+.product-card .price {
+    font-weight: bold;
+    color: #333;
+    font-size: 1rem;
+    margin-top: 0.5rem;
+}

@@ -1,0 +1,145 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Sản phẩm – ONCE
+{% endblock %}
+
+{% block main %}
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+
+<!-- DOUBLE HONEY COLLECTION -->
+<div style="background-color: #fff0f5; padding: 2rem;">
+    <h1 class="text-center" style="color: #d63384; font-weight: bold;">DOUBLE HONEY COLLECTION</h1>
+    <p class="text-center" style="max-width: 800px; margin: 1rem auto; color: #6c757d;">
+        Sau suốt 4 năm thực nghiệm, nhà ONCE tự tin gửi tới bạn bộ sưu tập độc đáo <strong>Black & White Honey</strong> – hai phương pháp sơ chế mang lại hương vị khác biệt và cảm xúc khó quên.
+    </p>
+
+    <div class="product-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 2rem;">
+        {% set products = [
+            {'img': 'black_honey.jpg', 'name': 'BLACK HONEY', 'note': 'Mint honey, Lavender, Black berry, Floral, Dark chocolate', 'price': 410000},
+            {'img': 'white_honey.jpg', 'name': 'WHITE HONEY', 'note': 'Lemon, Vani, Orange, Jasmine, Almond, Milky', 'price': 410000}
+        ] %}
+
+        {% for p in products %}
+        <div class="product-card" style="background-color: white; border-radius: 1rem; padding: 1.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.1); text-align: center;">
+            <img src="{{ url_for('static', filename='img/' ~ p.img) }}" alt="{{ p.name }}" style="width: 100%; border-radius: 1rem;">
+            <h3 style="color: #c2185b; margin-top: 1rem;">{{ p.name }}</h3>
+            <p style="color: #6c757d;">{{ p.note }}</p>
+            <p style="font-weight: bold; color: #c2185b;">{{ p.price | vnd }}</p>
+            <form action="{{ url_for('add_to_cart') }}" method="POST">
+                <input type="hidden" name="product_name" value="{{ p.name }}">
+                <input type="hidden" name="price" value="{{ p.price }}">
+                <button type="submit" style="background-color: #d63384; color: white; border: none; padding: 0.5rem 1rem; border-radius: 8px;">
+                    🛒 Thêm vào giỏ
+                </button>
+            </form>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<!-- BLACK HONEY ORIGINS SLIDER -->
+<div style="background-color: #f8f9fa; padding: 2rem;">
+    <h2 class="text-center" style="color: #d63384; font-weight: bold;">BLACK HONEY ORIGINS</h2>
+    <p class="text-center" style="max-width: 800px; margin: 0 auto; color: #6c757d;">
+        Mỗi quốc gia, một bản sắc – cùng khám phá 3 phiên bản Black Honey từ những vùng đất khác nhau.
+    </p>
+
+    <div class="swiper mySwiper" style="margin-top: 2rem;">
+        <div class="swiper-wrapper">
+            {% set origins = [
+                {'img': 'BH-VietNam.jpg', 'name': 'BLACK HONEY – VIETNAM', 'note': 'Mint honey, Plum, Brown sugar', 'price': 310000},
+                {'img': 'BH-CostaRica.jpg', 'name': 'BLACK HONEY – COSTA RICA', 'note': 'Lavender, Berry, Honeydew', 'price': 410000},
+                {'img': 'BH-ethiopia.jpg', 'name': 'BLACK HONEY – ETHIOPIA', 'note': 'Jasmine, Blackberry, Cacao', 'price': 410000}
+            ] %}
+
+            {% for o in origins %}
+            <div class="swiper-slide">
+                <div class="product-card" style="background-color: white; border-radius: 1rem; padding: 1rem; box-shadow: 0 4px 12px rgba(0,0,0,0.1); text-align: center;">
+                    <img src="{{ url_for('static', filename='img/' ~ o.img) }}" alt="{{ o.name }}" style="width: 100%; border-radius: 1rem;">
+                    <h4 style="color: #c2185b; margin-top: 1rem;">{{ o.name }}</h4>
+                    <p style="color: #6c757d;">{{ o.note }}</p>
+                    <p style="font-weight: bold; color: #c2185b;">{{ o.price | vnd }}</p>
+                    <form action="{{ url_for('add_to_cart') }}" method="POST">
+                        <input type="hidden" name="product_name" value="{{ o.name }}">
+                        <input type="hidden" name="price" value="{{ o.price }}">
+                        <button type="submit" style="background-color: #d63384; color: white; border: none; padding: 0.5rem 1rem; border-radius: 8px; margin-top: 0.5rem;">
+                            🛒 Thêm vào giỏ
+                        </button>
+                    </form>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="swiper-button-next" style="color: #d63384;"></div>
+        <div class="swiper-button-prev" style="color: #d63384;"></div>
+        <div class="swiper-pagination"></div>
+    </div>
+</div>
+
+<!-- GESHA COLLECTION -->
+<div style="background-color: #f8f9fa; padding: 2rem;">
+    <h2 class="text-center" style="color: #d63384; font-weight: bold;">GESHA COLLECTION</h2>
+    <p class="text-center" style="max-width: 800px; margin: 0 auto; color: #6c757d;">
+        Gesha luôn là một loại hạt được yêu thích nhất trên khắp thế giới vì sự phong phú hương vị và sự đặc trưng riêng biệt.
+    </p>
+
+    <div class="swiper mySwiper" style="margin-top: 2rem;">
+        <div class="swiper-wrapper">
+            {% set geshas = [
+                {'img': 'Gesha_spring.png', 'name': 'GESHA SPRING', 'note': 'Mint honey, Plum, Brown sugar', 'price': 655000},
+                {'img': 'Gesha_summer.png', 'name': 'GESHA SUMMER', 'note': 'Apple, Lotus, Jasmine, Berry', 'price': 655000},
+                {'img': 'Gesha_autumn.png', 'name': 'GESHA AUTUMN', 'note': 'Hazelnut, Maple Syrup, Caramel, Pumpkin', 'price': 655000},
+                {'img': 'Gesha_winter.png', 'name': 'GESHA WINTER', 'note': 'Lavender, Woody, Oakwood', 'price': 655000}
+            ] %}
+
+            {% for g in geshas %}
+            <div class="swiper-slide">
+                <div class="product-card" style="background-color: white; border-radius: 1rem; padding: 1rem; box-shadow: 0 4px 12px rgba(0,0,0,0.1); text-align: center;">
+                    <img src="{{ url_for('static', filename='img/' ~ g.img) }}" alt="{{ g.name }}" style="width: 100%; border-radius: 1rem;">
+                    <h4 style="color: #c2185b; margin-top: 1rem;">{{ g.name }}</h4>
+                    <p style="color: #6c757d;">{{ g.note }}</p>
+                    <p style="font-weight: bold; color: #c2185b;">{{ g.price | vnd }}</p>
+                    <form action="{{ url_for('add_to_cart') }}" method="POST">
+                        <input type="hidden" name="product_name" value="{{ g.name }}">
+                        <input type="hidden" name="price" value="{{ g.price }}">
+                        <button type="submit" style="background-color: #d63384; color: white; border: none; padding: 0.5rem 1rem; border-radius: 8px; margin-top: 0.5rem;">
+                            🛒 Thêm vào giỏ
+                        </button>
+                    </form>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="swiper-button-next" style="color: #d63384;"></div>
+        <div class="swiper-button-prev" style="color: #d63384;"></div>
+        <div class="swiper-pagination"></div>
+    </div>
+</div>
+
+<!-- Swiper JS -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script>
+    const swiper = new Swiper(".mySwiper", {
+        slidesPerView: 1,
+        spaceBetween: 20,
+        loop: true,
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev"
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true
+        },
+        breakpoints: {
+            768: {
+                slidesPerView: 2
+            },
+            1024: {
+                slidesPerView: 3
+            }
+        }
+    });
+</script>
+{% endblock %}

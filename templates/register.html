@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Đăng ký
+{% endblock %}
+
+{% block main %}
+<section class="section">
+  <div class="container">
+    <h1 class="title has-text-centered">Tạo tài khoản</h1>
+
+    <form action="/register" method="post" style="max-width: 400px; margin: auto;">
+      <div class="field">
+        <label class="label">Email</label>
+        <div class="control has-icons-left">
+          <input class="input" type="text" name="email" placeholder="Nhập email của bạn" required>
+          <span class="icon is-small is-left">
+            <i class="fas fa-envelope"></i>
+          </span>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label">Mật khẩu</label>
+        <div class="control has-icons-left">
+          <input class="input" type="password" name="password" placeholder="Tạo mật khẩu" required>
+          <span class="icon is-small is-left">
+            <i class="fas fa-lock"></i>
+          </span>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label">Xác nhận mật khẩu</label>
+        <div class="control has-icons-left">
+          <input class="input" type="password" name="confirmation" placeholder="Nhập lại mật khẩu" required>
+          <span class="icon is-small is-left">
+            <i class="fas fa-check-double"></i>
+          </span>
+        </div>
+      </div>
+
+      <div class="field is-grouped is-grouped-centered mt-4">
+        <div class="control">
+          <button class="button is-link" type="submit">Đăng ký</button>
+        </div>
+        <div class="control">
+          <a class="button is-light" href="/">Hủy</a>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
+{% endblock %}

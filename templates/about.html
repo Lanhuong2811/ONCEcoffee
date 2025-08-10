@@ -1,0 +1,76 @@
+{% extends "layout.html" %}
+{% block title %}Về ONCE{% endblock %}
+{% block main %}
+<div class="container py-5" style="background-color: #fff0f5; border-radius: 16px;">
+    <h1 class="text-center mb-4" style="color: #d63384;">💫 Về ONCE Specialty Coffee</h1>
+    <p class="text-center fs-5" style="color: #6c2a57;">
+        ONCE. là một nhà rang cà phê chất lượng, thủ công mẻ nhỏ với sự kiểm soát chất lượng tỉ mỉ, kĩ càng để luôn giữ được tròn vẹn hương vị nguyên bản cà phê từ mỗi vùng đất (Đất Nước).
+        Tại ONCE, chúng tôi luôn có mọi loại cà phê dành cho tất cả thú chơi & mọi người yêu cà phê!
+    </p>
+
+    <hr class="my-5" style="border-top: 2px dashed #d63384;">
+
+    <div class="row row-cols-1 row-cols-md-2 g-4">
+        <!-- Câu chuyện 1 -->
+        <div class="col">
+            <div class="card h-100 shadow" style="border-radius: 16px;">
+                <div class="card-body">
+                    <h5 class="card-title" style="color: #b5006b;">☕ Hành trình từ những hạt cà nhỏ</h5>
+                    <p class="card-text">
+                        Mỗi hạt cà phê được chúng tôi chọn lọc kỹ lưỡng từ những nông trại cao nguyên, nơi người nông dân chăm sóc bằng tất cả tình yêu và niềm tin vào chất lượng.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Câu chuyện 2 -->
+        <div class="col">
+            <div class="card h-100 shadow" style="border-radius: 16px;">
+                <div class="card-body">
+                    <h5 class="card-title" style="color: #b5006b;">🎈 Ý nghĩa cái tên “ONCE”</h5>
+                    <p class="card-text">
+                        “ONCE” – chỉ một lần – tượng trưng cho một khoảnh khắc đáng nhớ. Chúng tôi mong mỗi lần bạn ghé ONCE là một trải nghiệm đặc biệt, duy nhất và đáng quý.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Câu chuyện 3 -->
+       <div class="col-12">
+    <div class="row align-items-center g-4">
+        <div class="col-md-6">
+            <img src="{{ url_for('static', filename='img/once-farm-team.jpg') }}" alt="Cộng đồng nông trại" class="img-fluid rounded shadow">
+        </div>
+        <div class="col-md-6">
+            <div class="card h-100 shadow" style="border-radius: 16px;">
+                <div class="card-body">
+                    <h5 class="card-title" style="color: #b5006b;">🌱 Cộng đồng & bền vững</h5>
+                    <p class="card-text">
+                        ONCE không chỉ là cà phê – chúng tôi hợp tác chặt chẽ với những người nông dân tại vùng cao, cùng họ phát triển phương pháp canh tác bền vững và đem lại giá trị thật từ từng hạt cà phê.
+                        <br><br>
+                        Mỗi nụ cười, mỗi cái bắt tay giữa chúng tôi và người trồng là nền tảng cho cộng đồng cà phê phát triển lành mạnh và công bằng.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+        <!-- Câu chuyện 4 -->
+        <div class="col">
+            <div class="card h-100 shadow" style="border-radius: 16px;">
+                <div class="card-body">
+                    <h5 class="card-title" style="color: #b5006b;">🧁 Khởi đầu từ một chiếc máy rang nhỏ</h5>
+                    <p class="card-text">
+                        ONCE được bắt đầu bởi một nhóm bạn trẻ đam mê cà phê, từ những mẻ rang đầu tiên từ chiếc máy rang gia đình, giờ đây đã trở thành một hành trình lan tỏa giá trị.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="text-center mt-5">
+        <img src="/static/img/once-and-farm.jpg" alt="ONCE Team" class="img-fluid" style="max-height: 300px;">
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home – ONCE Coffee & Roastery
+{% endblock %}
+
+{% block main %}
+<!-- Hero Section -->
+<section class="hero">
+    <div class="hero-image">
+        <img src="{{ url_for('static', filename='images/goats.jpg') }}" alt="ONCE Banner">
+    </div>
+</section>
+
+<!-- Welcome Message -->
+ <section class="intro">
+    <img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="ONCE Logo" class="logo">
+    <h1>Welcome to ONCE Coffee & Roastery</h1>
+    <p>Where creativity brews, goats dance, and specialty beans shine.</p>
+</section>
+
+<!-- Features Section -->
+<section class="features">
+    <div class="feature-box">
+        <h2>🌱 Our Mission</h2>
+        <p>To bring joy and inspiration through every delightful cup of specialty coffee.</p>
+    </div>
+    <div class="feature-box">
+        <h2>☕ Premium Quality</h2>
+        <p>We roast only specialty-grade beans, crafted with passion and care.</p>
+    </div>
+    <div class="feature-box">
+        <h2>💗 Coffee Community</h2>
+        <p>ONCE connects people who love coffee, creativity, and cute goats.</p>
+    </div>
+</section>
+
+<!-- Call to Action -->
+<section class="cta">
+    <a href="/shop" class="btn-shop">🛍️ Shop Our Beans</a>
+</section>
+{% endblock %}

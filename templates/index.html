@@ -1,0 +1,35 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ONCE - Specialty Coffee & Roastery</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body class="pink-theme">
+    <header class="hero">
+        <img src="{{ url_for('static', filename='logo.jpg') }}" alt="ONCE Logo" class="logo">
+        <nav>
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+            <a href="/shop">Shop</a>
+            <a href="/login">Login</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="intro">
+            <h1>Welcome to ONCE</h1>
+            <p>Where every cup tells a story.</p>
+            <a class="btn" href="/shop">Explore Our Beans</a>
+        </section>
+        <section class="illustration">
+            <img src="{{ url_for('static', filename='goats.jpg') }}" alt="Dancing goats">
+        </section>
+    </main>
+
+    <footer>
+        <p>📧 oncecoffee2020@gmail.com | 📷 @ONCE.coffeeandmore | 📞 096 988 52 55</p>
+    </footer>
+</body>
+</html>

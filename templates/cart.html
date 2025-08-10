@@ -1,0 +1,69 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Giỏ hàng – ONCE
+{% endblock %}
+
+{% block main %}
+<div class="container py-5" style="background-color: #fff0f5; border-radius: 16px; padding: 2rem;">
+    <h1 class="text-center" style="color: #d63384; font-weight: bold;">🛍️ Giỏ hàng của bạn</h1>
+
+    {% if cart %}
+        <table class="table table-striped mt-4" style="background-color: white; border-radius: 12px;">
+            <thead style="color: #d63384;">
+                <tr>
+                    <th>Tên sản phẩm</th>
+                    <th>Giá</th>
+                    <th>Xóa</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in cart %}
+                <tr>
+                    <td>{{ item.name }}</td>
+                    <td>{{ item.price | vnd }}</td>
+                    <td>
+                        <form action="/remove_from_cart" method="post" style="display:inline;">
+                            <input type="hidden" name="index" value="{{ loop.index0 }}">
+                            <button type="submit" class="btn btn-sm btn-danger">X</button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <h4 class="text-end me-2" style="color: #b5006b;">
+            Tổng cộng: <strong>{{ total | vnd }}</strong>
+        </h4>
+
+        <hr style="border-top: 2px dashed #d63384;">
+
+        <h2 style="color: #d63384;">📝 Thông tin giao hàng</h2>
+        <form action="/checkout" method="post" class="mt-3">
+            <div class="mb-3">
+                <label class="form-label">Họ và tên:</label>
+                <input type="text" name="name" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Số điện thoại:</label>
+                <input type="text" name="phone" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Địa chỉ giao hàng:</label>
+                <input type="text" name="address" class="form-control" required>
+            </div>
+            <div class="text-end">
+                <button type="submit" class="btn" style="background-color: #d63384; color: white;">
+                    ✅ Xác nhận đơn hàng
+                </button>
+            </div>
+        </form>
+    {% else %}
+        <p class="text-center mt-5" style="color: #b5006b;">Chưa có sản phẩm nào trong giỏ hàng.</p>
+        <div class="text-center mt-3">
+            <a href="/shop" class="btn btn-outline-pink">🛍️ Tiếp tục mua sắm</a>
+        </div>
+    {% endif %}
+</div>
+{% endblock %}

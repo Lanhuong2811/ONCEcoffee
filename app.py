@@ -94,8 +94,7 @@ def logout():
 @app.route("/add_to_cart", methods=["POST"])
 def add_to_cart():
     product_id = request.form.get("product_id")
-    # allow both `name` and legacy `product_name`
-    name = request.form.get("name") or request.form.get("product_name")
+    name = request.form.get("name")
     price_raw = request.form.get("price")
     try:
         price = int(price_raw) if price_raw is not None else 0

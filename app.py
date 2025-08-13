@@ -95,7 +95,11 @@ def logout():
 def add_to_cart():
     product_id = request.form.get("product_id")
     name = request.form.get("name")
-    price = int(request.form.get("price"))
+    price_raw = request.form.get("price")
+    try:
+        price = int(price_raw) if price_raw is not None else 0
+    except ValueError:
+        price = 0
 
     if "cart" not in session:
         session["cart"] = []

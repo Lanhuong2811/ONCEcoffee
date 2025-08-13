@@ -1,0 +1,9 @@
+{% extends "layout.html" %}
+{% block title %}Lỗi {{ code or top }}{% endblock %}
+{% block main %}
+<div class="container text-center" style="padding: 3rem;">
+  <h1 style="color: #d63384;">{{ message or bottom }}</h1>
+  <p>Vui lòng quay lại và thử lại.</p>
+  <a href="/" class="button is-link">Về trang chủ</a>
+</div>
+{% endblock %}
